@@ -1,7 +1,7 @@
+/** @jsx jsx */
+import { css,jsx } from '@emotion/react'
 import React from 'react'
-import { css } from '@emotion/react'
 import {css_elevation, css_hover_option} from './styles';
-
 interface BasicCardProps {
   children: JSX.Element
   className?: string
