@@ -2,7 +2,7 @@ import React from 'react'
 import { fireEvent, render } from "@testing-library/react";
 import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
-import withCard from '../src/hoc/withCard'
+import withCard from '../src/components/withCard'
 expect.extend(matchers)
 
 describe('HOC writchCard',()=>{
@@ -25,6 +25,7 @@ describe('HOC writchCard',()=>{
     const { container } =render(<Component  onClick={handleClick}><div>good</div></Component>);
     const firstChild = container.getElementsByTagName('div')[0];
     fireEvent.click(firstChild);
+    expect(firstChild).toHaveStyle('cursor:pointer')
     expect(handleClick).toHaveBeenCalledTimes(1);
   })
 

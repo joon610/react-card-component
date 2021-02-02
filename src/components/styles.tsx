@@ -21,6 +21,10 @@ export const css_elevation =[
 ]
 
 
+export const css_cursor = css`
+  cursor:pointer;
+`
+
 export const css_hover_option = {
   up: css`
     transition:  transform 0.25s;
@@ -47,11 +51,9 @@ export const css_hover_option = {
     }
   `,
   zoom: css`
-    transition: trhoansform 0.25s;
+    transition: transform 0.25s;
     :hover{
       z-index:10;
-      -webkit-transform: scale(1.2);
-      -ms-transform: scale(1.2);
       transform: scale(1.2);
     }
   `
