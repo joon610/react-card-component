@@ -2,10 +2,10 @@
 import { css,jsx } from '@emotion/react'
 import React from 'react'
 import {css_elevation,css_root,css_child, css_hover_option, css_cursor} from './styles';
-
 interface BasicCardProps {
   children?: JSX.Element
   className?: string
+  style?: object
   elevation?: elevationType
   radius?: string;
   hoverType?: hoverMoveType | undefined;
@@ -21,7 +21,7 @@ const withCard = (Component:React.FC<{ children?:JSX.Element | undefined}>) => (
   const css_radius = props?.radius && css`border-radius:${props?.radius};`
   const css_pointer = props?.onClick && css_cursor;
   return (
-  <div css={[css_root,css_elevation[elevationValue],css_hover,css_radius, css_pointer]} className={props?.className} onClick={props.onClick}>
+  <div style={props?.style} css={[css_root,css_elevation[elevationValue],css_hover,css_radius, css_pointer]} className={props?.className} onClick={props.onClick}>
     <div css={css_child}>
       <Component { ...props}/>
     </div>

@@ -3,6 +3,7 @@ import { fireEvent, render } from "@testing-library/react";
 import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
 import withCard from '../src/components/withCard'
+import { css } from '@emotion/react'
 expect.extend(matchers)
 
 describe('HOC writchCard',()=>{
@@ -10,7 +11,7 @@ describe('HOC writchCard',()=>{
   const Component = withCard(ChildComponent);
 
   it('empty snapshot', () => {
-    const {container} = render(<Component><div>good</div></Component>);
+    const {container} = render(<Component></Component>);
     expect(container).toMatchSnapshot();
   });
 
@@ -18,6 +19,13 @@ describe('HOC writchCard',()=>{
     const {getByText} = render(<Component><div>good</div></Component>);
     const childText = getByText('good');
     expect(childText).toBeInTheDocument();
+  })
+
+  it('css Object style',()=>{
+    const { container } =render(<Component  style={{"width":"300px","background":"red"}}><div>good</div></Component>);
+    const firstChild = container.getElementsByTagName('div')[0];
+    expect(firstChild).toHaveStyle('width:300px');
+    expect(firstChild).toHaveStyle('background:red');
   })
 
   it('click Card', ()=>{

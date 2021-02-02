@@ -122,11 +122,7 @@ exports[`HOC writchCard empty snapshot 1`] = `
     <div
       class="emotion-1"
     >
-      <div>
-        <div>
-          good
-        </div>
-      </div>
+      <div />
     </div>
   </div>
 </div>

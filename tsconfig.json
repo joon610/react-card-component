@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "ES6",                          /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2019' or 'ESNEXT'. */
     "module": "ES2015",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+    "moduleResolution": "node",
     "types": ["@emotion/react/types/css-prop","jest"],
     "jsx": "react",                           /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
     "declaration": true,                   /* Generates corresponding '.d.ts' file. */
@@ -19,5 +20,5 @@
   "exclude": [
     "node_modules",
     "lib"
-  ]
+  ],
 }
