@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joon610/react-inaCard.git"
+    "url": "git+https://github.com/joon610/react-inaCard-hoc.git"
   },
-  "author": "",
+  "author": "joon610",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joon610/react-inaCard/issues"
+    "url": "https://github.com/joon610/react-inaCard-hoc/issues"
   },
-  "homepage": "https://github.com/joon610/react-inaCard#readme",
+  "homepage": "https://github.com/joon610/react-inaCard-hoc#readme",
   "peerDependencies": {
     "react": ">=17.0.1"
   },
