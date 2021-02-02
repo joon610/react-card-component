@@ -1,1 +1,1 @@
-# react-ina-card-hoc
+# react-inaCard-hoc
