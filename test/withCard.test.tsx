@@ -3,7 +3,6 @@ import { fireEvent, render } from "@testing-library/react";
 import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
 import withCard from '../src/components/withCard'
-import { css } from '@emotion/react'
 expect.extend(matchers)
 
 describe('HOC writchCard',()=>{
