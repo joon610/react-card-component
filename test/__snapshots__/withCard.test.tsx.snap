@@ -132,7 +132,7 @@ exports[`HOC writchCard empty snapshot 1`] = `
 </div>
 `;
 
-exports[`HOC writchCard radius 20px snapshot 1`] = `
+exports[`HOC writchCard radius 1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;
