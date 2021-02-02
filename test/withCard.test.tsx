@@ -2,7 +2,7 @@ import React from 'react'
 import { fireEvent, render } from "@testing-library/react";
 import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
-import withCard from '../src/components/withCard'
+import withCard from '../src/hoc/withCard'
 expect.extend(matchers)
 
 describe('HOC writchCard',()=>{
