@@ -1,5 +1,18 @@
 import { css } from '@emotion/react'
 
+export const css_root = css`
+  width: 100%;
+  height:100%;
+  border-radius: 5px;
+  background:white;
+`
+
+export const css_child = css`
+  height:100%;
+  position: relative;
+  border-radius: inherit;
+  overflow: hidden;
+`
 
 export const css_elevation =[
   css`box-shadow: none;`,
@@ -31,6 +44,15 @@ export const css_hover_option = {
     transition:  transform 0.25s;
     :hover{
       transform: translate(4px, 0px)
-  }
-`
+    }
+  `,
+  zoom: css`
+    transition: trhoansform 0.25s;
+    :hover{
+      z-index:10;
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2);
+    }
+  `
 }
