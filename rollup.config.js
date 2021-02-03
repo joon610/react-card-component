@@ -5,14 +5,14 @@ import { terser } from "rollup-plugin-terser";
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 export default {
-  input: 'src/index.ts',
+  input: './src/index.ts',
   output: {
-    file: pkg.main,
+    file: './lib/index.ts',
     format: 'es'
   },
   plugins: [
-    nodeResolve({ preferBuiltins: false }),
-    commonjs(),
+    // nodeResolve({ preferBuiltins: false }),
+    // commonjs(),
     peerDepsExternal(),
     typescript(),
     terser(),

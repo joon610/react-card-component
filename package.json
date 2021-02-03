@@ -2,10 +2,7 @@
   "name": "react-ina-card-test",
   "version": "0.0.40",
   "description": "",
-  "main": "./lib/src/index.js",
-  "files": [
-    "lib/src"
-  ],
+  "main": "./index.js",
   "scripts": {
     "test": "jest",
     "rollup": "rollup -c",
