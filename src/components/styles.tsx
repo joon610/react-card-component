@@ -5,6 +5,7 @@ export const css_root = css`
   height:100%;
   border-radius: 5px;
   background:white;
+  color:dimgray;
 `
 
 export const css_child = css`
