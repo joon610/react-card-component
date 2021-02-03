@@ -6,6 +6,7 @@ exports[`Card elevationType 0 1`] = `
   height: 100%;
   border-radius: 5px;
   background: white;
+  color: dimgray;
   box-shadow: none;
 }
 
@@ -33,6 +34,7 @@ exports[`Card elevationType 1 1`] = `
   height: 100%;
   border-radius: 5px;
   background: white;
+  color: dimgray;
   box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),0px 1px 1px 0px rgb(0 0 0 / 14%),0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 
@@ -60,6 +62,7 @@ exports[`Card elevationType 2 1`] = `
   height: 100%;
   border-radius: 5px;
   background: white;
+  color: dimgray;
   box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%),0px 3px 4px 0px rgb(0 0 0 / 14%),0px 1px 8px 0px rgb(0 0 0 / 12%);
 }
 
@@ -87,6 +90,7 @@ exports[`Card empty snapshot 1`] = `
   height: 100%;
   border-radius: 5px;
   background: white;
+  color: dimgray;
   box-shadow: none;
 }
 
@@ -114,6 +118,7 @@ exports[`Card radius 1`] = `
   height: 100%;
   border-radius: 5px;
   background: white;
+  color: dimgray;
   box-shadow: none;
   border-radius: 20px;
 }
