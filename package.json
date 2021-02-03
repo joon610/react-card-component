@@ -1,6 +1,6 @@
 {
   "name": "react-ina-card-test",
-  "version": "0.0.118",
+  "version": "0.0.120",
   "description": "",
   "main": "./lib/index.js",
   "files": [
@@ -23,7 +23,9 @@
   "homepage": "https://github.com/joon610/react-inaCard-hoc#readme",
   "peerDependencies": {
     "react": ">=17.0.1",
-    "react-dom": ">=17.0.1"
+    "react-dom": ">=17.0.1",
+    "@types/react": ">=17.0.0",
+    "@types/react-dom": ">=17.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
@@ -36,10 +38,10 @@
     "@rollup/plugin-typescript": "^8.1.1",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
+    "@types/react-dom": "^17.0.0",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.22",
     "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3",
     "react": "^17.0.1",
