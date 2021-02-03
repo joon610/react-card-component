@@ -1,1 +1,66 @@
-# react-inaCard-hoc
+# react-card-component
+
+## License
+
+- MIT License
+
+## Install
+
+```
+ npm i react-card-componet
+```
+
+## Usage (Parameta)
+
+<!-- - [`style`](#style)
+- [`elevation`](#elevation)
+- [`hoverType`](#hoverType) -->
+
+### `HOC` withCard
+
+```js
+import { widthCard } from 'react-card-component';
+const MockCompoent = widthCard(() => <div>HelloWorld</div>);
+```
+
+### `Component` Card
+
+```js
+  import { Card } from 'react-card-component';
+  const NewCard = () =><Card><div>HelloWorld</div></Card>);
+```
+
+### `Common Props` style
+
+```js
+  import { Card } from 'react-card-component';
+  const NewCard = () =><Card style={{"color":"red"}}><div>HelloWorld</div></Card>);
+```
+
+### `Common Props` elevation
+
+elevation default = 1;
+
+```js
+  type elevationType =  0 | 1 | 2
+
+  import { Card } from 'react-card-component';
+  const NewCard = () =><Card elevation={1}><div>HelloWorld</div></Card>);
+```
+
+### `Common Props` hoverType
+
+```js
+  type hoverMoveType = 'up' | 'left' | `right` | `down` | 'zoom'
+
+  import { Card } from 'react-card-component';
+  const NewCard = () =><Card hoverType={"zoom"}><div>HelloWorld</div></Card>);
+```
+
+### `Common Props` radius
+
+```js
+
+  import { Card } from 'react-card-component';
+  const NewCard = () =><Card raidus={"10px"}><div>HelloWorld</div></Card>);
+```

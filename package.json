@@ -1,7 +1,7 @@
 {
-  "name": "react-ina-card-test",
-  "version": "0.0.120",
-  "description": "",
+  "name": "react-card-component",
+  "version": "0.0.1-beta.1",
+  "description": "React Card Component",
   "main": "./lib/index.js",
   "files": [
     "lib"
@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joon610/react-inaCard-hoc.git"
+    "url": "git+https://github.com/joon610/react-card-component.git"
   },
   "author": "joon610",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/joon610/react-inaCard-hoc/issues"
+    "url": "https://github.com/joon610/react-card-component/issues"
   },
-  "homepage": "https://github.com/joon610/react-inaCard-hoc#readme",
+  "homepage": "https://github.com/joon610/react-card-component#readme",
   "peerDependencies": {
     "react": ">=17.0.1",
     "react-dom": ">=17.0.1",
