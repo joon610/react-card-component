@@ -23,7 +23,7 @@
   "homepage": "https://github.com/joon610/react-inaCard-hoc#readme",
   "peerDependencies": {
     "react": "^17.0.1",
-    "react-dom": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
