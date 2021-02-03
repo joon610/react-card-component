@@ -1,8 +1,8 @@
 import React from 'react'
 import withCard from './withCard'
 
-const Card: React.FC<{ children?:JSX.Element }> = withCard(({children}) =>{
+const Card: React.FC<{ children?:JSX.Element }> = ({children}) =>{
   return <>{children}</>
-})
+}
 
-export default Card;
+export default withCard(Card);
