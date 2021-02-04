@@ -9,6 +9,7 @@ export default {
     file: pkg.main,
     format: 'es'
   },
+  external:['@emotion/react'],
   plugins: [
     peerDepsExternal(),
     typescript(),
