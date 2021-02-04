@@ -6,6 +6,8 @@ export const css_root = css`
   border-radius: 5px;
   background:white;
   color:dimgray;
+  border: 1px solid #00000010;
+  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
 `
 
 export const css_child = css`
@@ -21,6 +23,14 @@ export const css_elevation =[
   css`box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);`,
 ]
 
+export const css_border_radius = [
+  css`border-radius: 0px;`,
+  css`border-radius: 5px;`,
+  css`border-radius: 10px;`,
+  css`border-radius: 15px;`,
+  css`border-radius: 20px;`
+]
+
 
 export const css_cursor = css`
   cursor:pointer;
@@ -28,34 +38,40 @@ export const css_cursor = css`
 
 export const css_hover_option = {
   up: css`
-    transition:  transform 0.25s;
     :hover{
-      transform: translate(0px, -4px)
+      border-color: #1EA7FD50;
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+      transform: translate3d(0, -4px, 0);
     }
   `,
   down: css`
-    transition:  transform 0.25s;
     :hover{
-      transform: translate(0px, 4px)
+      border-color: #1EA7FD50;
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+      transform: translate3d(0, 4px, 0);
     }
   `,
   left: css`
-    transition:  transform 0.25s;
     :hover{
-      transform: translate(-4px, 0px)
+      border-color: #1EA7FD50;
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+      transform: translate3d(-4px, 0, 0);
     }
   `,
   right: css`
-    transition:  transform 0.25s;
     :hover{
-      transform: translate(4px, 0px)
+      border-color: #1EA7FD50;
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
+      transform: translate3d(4px, 0, 0);
     }
   `,
   zoom: css`
-    transition: transform 0.25s;
     :hover{
       z-index:10;
-      transform: scale(1.2);
+      border-color: #1EA7FD50;
+      transform: scale(1.1);
+      box-shadow: rgba(0, 0, 0, 0.08) 0 3px 10px 0;
     }
-  `
+  `,
+  none:{}
 }

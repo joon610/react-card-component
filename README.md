@@ -16,13 +16,6 @@
 - [`elevation`](#elevation)
 - [`hoverType`](#hoverType) -->
 
-### `HOC` withCard
-
-```js
-import { widthCard } from 'react-card-component';
-const MockCompoent = widthCard(() => <div>HelloWorld</div>);
-```
-
 ### `Component` Card
 
 ```js
