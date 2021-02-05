@@ -3,10 +3,10 @@ import { fireEvent, render } from "@testing-library/react";
 import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
 import {Card} from '../src/components/Card'
+import { objectToCssStyle } from '../src/components/utils';
 expect.extend(matchers)
 
-describe('Card',()=>{
-
+describe('<Card>',()=>{
   it('empty snapshot', () => {
     const {container} = render(<Card/>);
     expect(container).toMatchSnapshot();
@@ -74,24 +74,38 @@ describe('Card',()=>{
   it('hover up', async ()=>{
     const { container } =render(<Card hoverType={"up"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, -3px, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, -4px, 0)", { target: ":hover" });
   })
 
   it('hover down', async ()=>{
     const { container } =render(<Card hoverType={"down"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, 3px, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, 4px, 0)", { target: ":hover" });
   })
 
   it('hover left', async ()=>{
     const { container } =render(<Card hoverType={"left"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(-3px, 0, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(-4px, 0, 0)", { target: ":hover" });
   })
 
   it('hover right', async ()=>{
     const { container } =render(<Card hoverType={"right"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(3px, 0, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(4px, 0, 0)", { target: ":hover" });
+  })
+})
+
+describe('utils',()=>{
+  it('objectToCssStyle',()=>{
+    const styleObject = {
+      width:"300px",
+      height:"200px",
+      ":hover":{
+        background:"red"
+      }
+    }
+
+    expect((objectToCssStyle(styleObject))).toEqual('width:300px;height:200px;:hover{background:red}')
   })
 })

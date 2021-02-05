@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card Background 1`] = `
+exports[`<Card> Background 1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;
@@ -31,7 +31,7 @@ exports[`Card Background 1`] = `
 </div>
 `;
 
-exports[`Card bordered  1`] = `
+exports[`<Card> bordered  1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;
@@ -59,7 +59,7 @@ exports[`Card bordered  1`] = `
 </div>
 `;
 
-exports[`Card css Object style 1`] = `
+exports[`<Card> css Object style 1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;
@@ -92,7 +92,7 @@ exports[`Card css Object style 1`] = `
 </div>
 `;
 
-exports[`Card empty snapshot 1`] = `
+exports[`<Card> empty snapshot 1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;
@@ -119,7 +119,7 @@ exports[`Card empty snapshot 1`] = `
 </div>
 `;
 
-exports[`Card outlined  1`] = `
+exports[`<Card> outlined  1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;
@@ -147,7 +147,7 @@ exports[`Card outlined  1`] = `
 </div>
 `;
 
-exports[`Card outlined && bordered 1`] = `
+exports[`<Card> outlined && bordered 1`] = `
 .emotion-0 {
   width: 100%;
   height: 100%;

@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import {objectToCssStyle} from './utils'
 
 export const css_root = css`
   width: 100%;
@@ -48,7 +49,7 @@ const css_hover_up = css`
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
-    transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -4px, 0);
   }
 `
 const css_hover_down = css`
@@ -56,7 +57,7 @@ const css_hover_down = css`
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
-    transform: translate3d(0, 3px, 0);
+    transform: translate3d(0, 4px, 0);
   }
 `
 const css_hover_left = css`
@@ -64,7 +65,7 @@ const css_hover_left = css`
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
-    transform: translate3d(-3px, 0, 0);
+    transform: translate3d(-4px, 0, 0);
   }
 `
 const css_hover_right = css`
@@ -72,7 +73,7 @@ const css_hover_right = css`
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
-    transform: translate3d(3px, 0, 0);
+    transform: translate3d(4px, 0, 0);
   }
 `
 const css_hover_zoom = css`
@@ -84,5 +85,3 @@ const css_hover_zoom = css`
     transform: scale(1.1);
   }
 `
-
-const objectToCssStyle = (object:object|undefined) => (JSON.stringify(object).replace(/"/g,'').replace(/((:{))/g,'{').replace(/,/g,';').slice(1,-1))
