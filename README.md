@@ -1,5 +1,7 @@
 # react-card-component
 
+![React Card Component CI](https://github.com/joon610/react-card-component/workflows/React%20Card%20Component%20CI/badge.svg)
+
 ## License
 
 - MIT License
