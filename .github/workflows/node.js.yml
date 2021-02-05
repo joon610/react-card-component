@@ -25,12 +25,13 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org/
-      - run: npm install
-      - run: npm run test
-      - run: npm run rollup
+        run: npm ci --ignore-scripts
+        run: npm install
+        run: npm run test
+        run: npm run rollup
       - name: Publish
         run: |
           npm config set //registry.npmjs.org/:_authToken ${NPM_TOKEN}
-          npm publish --tag beta
+          npm publish --ignore-scripts
         env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
