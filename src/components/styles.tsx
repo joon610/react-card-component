@@ -5,7 +5,6 @@ export const css_root = css`
   height:100%;
   background:white;
   color:dimgray;
-  transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;
 `
 
 export const css_child = css`
@@ -42,8 +41,10 @@ export const css_hover_option =(type:string|undefined)=> {
   }
 }
 
+const css_transition = css`transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;`
 
 const css_hover_up = css`
+  ${css_transition}
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
@@ -51,6 +52,7 @@ const css_hover_up = css`
   }
 `
 const css_hover_down = css`
+  ${css_transition}
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
@@ -58,6 +60,7 @@ const css_hover_down = css`
   }
 `
 const css_hover_left = css`
+  ${css_transition}
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
@@ -65,6 +68,7 @@ const css_hover_left = css`
   }
 `
 const css_hover_right = css`
+  ${css_transition}
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
@@ -72,6 +76,7 @@ const css_hover_right = css`
   }
 `
 const css_hover_zoom = css`
+  ${css_transition}
   :hover{
     z-index:10;
     border-color: #1EA7FD50;

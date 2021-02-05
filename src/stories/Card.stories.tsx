@@ -22,7 +22,7 @@ Bordered.args = {
 };
 
 export const Outlined = Template.bind({});
-Bordered.args = {
+Outlined.args = {
   outlined: true,
 };
 
