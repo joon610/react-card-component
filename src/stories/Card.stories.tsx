@@ -6,67 +6,58 @@ export default {
   title: 'Example/Card',
   component: Card,
   args:{
-    elevation: 0,
-    radius: 0,
-    style:{width:"300px",height:"200px",background:"whitesmoke" },
+    bordered: false,
+    outlined: false,
+    style:{width:"300px",height:"200px"},
     onClick: undefined
   }
 } as Meta;
 
-const Template: Story<BasicCardProps> = (args) =>(<Card {...args} ></Card>);
+const Template: Story<BasicCardProps> = (args) =>(<Card {...args} />);
 
-export const Elevation0 = Template.bind({});
-Elevation0.args = {
-  elevation: 0,
+
+export const Bordered = Template.bind({});
+Bordered.args = {
+  bordered: true,
 };
 
-export const Elevation1 = Template.bind({});
-Elevation1.args = {
-  elevation: 1,
-};
-
-export const Elevation2 = Template.bind({});
-Elevation2.args = {
-  elevation: 2,
-};
-
-export const BorderRadius0 = Template.bind({});
-BorderRadius0.args = {
-  radius: 0,
-};
-
-export const BorderRadius1 = Template.bind({});
-BorderRadius1.args = {
-  radius: 1,
-};
-
-export const BorderRadius2 = Template.bind({});
-BorderRadius2.args = {
-  radius: 2,
+export const Outlined = Template.bind({});
+Bordered.args = {
+  outlined: true,
 };
 
 export const HoverTypeZoom= Template.bind({});
 HoverTypeZoom.args = {
+  bordered: true,
+  outlined: true,
   hoverType: "zoom",
 };
 
 export const HoverTypeUp= Template.bind({});
 HoverTypeUp.args = {
+  bordered: true,
+  outlined: true,
   hoverType: "up",
 };
 
 export const HoverTypeDown= Template.bind({});
 HoverTypeDown.args = {
+  bordered: true,
+  outlined: true,
   hoverType: "down",
 };
 
 export const HoverTypeLeft= Template.bind({});
 HoverTypeLeft.args = {
+  bordered: true,
+  outlined: true,
   hoverType: "left",
 };
 
 export const HoverTypeRight= Template.bind({});
 HoverTypeRight.args = {
+  bordered: true,
+  outlined: true,
   hoverType: "right",
 };
 

@@ -6,7 +6,6 @@ import {Card} from '../src/components/Card'
 expect.extend(matchers)
 
 describe('Card',()=>{
-  // const Component = () => <Card><div>good</div></Card>;
 
   it('empty snapshot', () => {
     const {container} = render(<Card/>);
@@ -19,11 +18,20 @@ describe('Card',()=>{
     expect(childText).toBeInTheDocument();
   })
 
+  it('Background', ()=>{
+    const {container} = render(<Card background={"red"}><div>good</div></Card>);
+    const firstChild = container.getElementsByTagName('div')[0];
+    expect(firstChild).toHaveStyle('background:red');
+    expect(container).toMatchSnapshot();
+  })
+
   it('css Object style',()=>{
-    const { container } =render(<Card style={{"width":"300px","background":"red"}}/>);
+    const { container } =render(<Card style={{"width":"300px","background":"red",":hover":{"background":"blue"}}}/>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyle('width:300px');
     expect(firstChild).toHaveStyle('background:red');
+    expect(firstChild).toHaveStyleRule("background", "blue", { target: ":hover" });
+    expect(container).toMatchSnapshot();
   })
 
   it('click Card', ()=>{
@@ -35,53 +43,24 @@ describe('Card',()=>{
     expect(handleClick).toHaveBeenCalledTimes(1);
   })
 
-  it('radius 0',()=>{
-    const { container } =render(<Card radius={0}/>);
-    const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyle({'border-radius':'0px'})
-    expect(container).toMatchSnapshot();
-  })
-
-  it('radius 1',()=>{
-    const { container } =render(<Card radius={1}/>);
-    const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyle({'border-radius':'5px'})
-    expect(container).toMatchSnapshot();
-  })
-
-  it('radius 2',()=>{
-    const { container } =render(<Card radius={2}/>);
+  it('bordered ',()=>{
+    const { container } =render(<Card bordered/>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyle({'border-radius':'10px'})
     expect(container).toMatchSnapshot();
   })
 
-  it('radius 3',()=>{
-    const { container } =render(<Card radius={3}/>);
+  it('outlined ',()=>{
+    const { container } =render(<Card outlined/>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyle({'border-radius':'15px'})
+    expect(firstChild).toHaveStyle({'border':'1px solid #00000010'})
     expect(container).toMatchSnapshot();
   })
 
-  it('radius 4',()=>{
-    const { container } =render(<Card radius={4}/>);
+  it('outlined && bordered',()=>{
+    const { container } =render(<Card outlined bordered/>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule('border-radius','20px')
-    expect(container).toMatchSnapshot();
-  })
-
-  it('elevationType 0',()=>{
-    const { container } =render(<Card elevation={0}/>);
-    expect(container).toMatchSnapshot();
-  })
-
-  it('elevationType 1',()=>{
-    const { container } =render(<Card elevation={1}/>);
-    expect(container).toMatchSnapshot();
-  })
-
-  it('elevationType 2',()=>{
-    const { container } =render(<Card elevation={2}/>);
+    expect(firstChild).toHaveStyle({'border':'1px solid #00000010','border-radius':'10px'});
     expect(container).toMatchSnapshot();
   })
 
@@ -95,24 +74,24 @@ describe('Card',()=>{
   it('hover up', async ()=>{
     const { container } =render(<Card hoverType={"up"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, -4px, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, -3px, 0)", { target: ":hover" });
   })
 
   it('hover down', async ()=>{
     const { container } =render(<Card hoverType={"down"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, 4px, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(0, 3px, 0)", { target: ":hover" });
   })
 
   it('hover left', async ()=>{
     const { container } =render(<Card hoverType={"left"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(-4px, 0, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(-3px, 0, 0)", { target: ":hover" });
   })
 
   it('hover right', async ()=>{
     const { container } =render(<Card hoverType={"right"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
-    expect(firstChild).toHaveStyleRule("transform", "translate3d(4px, 0, 0)", { target: ":hover" });
+    expect(firstChild).toHaveStyleRule("transform", "translate3d(3px, 0, 0)", { target: ":hover" });
   })
 })
