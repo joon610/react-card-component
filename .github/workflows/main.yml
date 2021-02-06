@@ -30,20 +30,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - name: storybook publish
       - uses: actions/setup-node@v1
       - name: story book build
         with:
           node-version: '12.x'
           repo-token: ${{ secrets.TOKEN }}
-      - name: storybook publish
+      - name: build
         run: npm run build-storybook
-        # run: cd ./storybook-static
-        # run: git init
-        # run: git remote add origin https://github.com/joon610/react-card-storybook
-        # run: git fetch origin
-        # run: git add .
-        # run: git commit -m 'Storybook publish from workflow'
-        # run: git push --set-upstream origin main
+        run: cd ./storybook-static
+        run: git init
+        run: git remote add origin https://github.com/joon610/react-card-storybook
+        run: git fetch origin
+        run: git add .
+        run: git commit -m 'Storybook publish from workflow'
+        run: git push --set-upstream origin main
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
