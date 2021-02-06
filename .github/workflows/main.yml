@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          node-version: '12.x'
+          always-auth: true
           registry-url: https://registry.npmjs.org
           scope: '@octocat'
       - run: npm -v
