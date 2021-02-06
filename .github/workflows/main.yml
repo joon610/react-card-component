@@ -40,6 +40,8 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git init
+          git config --global user.email "jdj610@gmail.com"
+          git config --global user.name "workflow"
           git remote add origin https://github.com/joon610/react-card-storybook
           git fetch origin
           git add .
