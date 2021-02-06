@@ -5,9 +5,9 @@ name: React Card Component CI
 
 on:
   push:
-    branches: [main]
+    branches: [main, workflow]
   pull_request:
-    branches: [main]
+    branches: [main, workflow]
 
 jobs:
   build:
