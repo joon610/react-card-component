@@ -40,8 +40,8 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git init
-          git config --global user.email "jdj610@gmail.com"
-          git config --global user.name "joon610"
+          git config --global user.name 'joon610'
+          git config --global user.email 'joon610@users.noreply.github.com
       - name: Git Remote and Commit
         working-directory: ./storybook-static
         run: |
@@ -52,6 +52,8 @@ jobs:
       - name: Git Push
         working-directory: ./storybook-static
         run: git push origin HEAD:main
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
