@@ -5,9 +5,9 @@ name: React Card Component CI
 
 on:
   push:
-    branches: [main, workflow]
+    branches: [main]
   pull_request:
-    branches: [main, workflow]
+    branches: [main]
 
 jobs:
   build:
@@ -20,27 +20,21 @@ jobs:
       - name: Build on Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '12.x'
       - run: npm -v
       - run: npm ci --ignore-scripts
+      - run: npm run test
       - run: npm run rollup
-        name: Build
-      - run: npm test
-        env:
-          CI: true
-  publish:
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          always-auth: true
-          node-version: '12.x'
-          registry-url: https://registry.npmjs.org
-          scope: '@octocat'
-      - name: Publish
-        run: npm publish --tag beta
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  # publish:
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #       with:
+  #         node-version: '12.x'
+  #         registry-url: 'https://registry.npmjs.org/'
+  #     - name: Publish
+  #       run: npm publish --tag beta
+  #       env:
+  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
