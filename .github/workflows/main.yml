@@ -12,25 +12,15 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
       - uses: actions/checkout@v2
-      - name: Build on Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v1
         with:
-          always-auth: true
-          node-version: ${{ matrix.node-version }}
-          registry-url: http://registry.npmjs.org
-          scope: '@main'
-      - run: npm -v
-      - run: npm ci --ignore-scripts
-      - run: npm run test
-        name: Build
-      - run: npm run rollup
-        name: Publish
-      - run: npm publish --tag beta
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
+      - run: npm install
+      - run: npm rollup
+      - run: npm publish
         env:
-          CI: true
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
