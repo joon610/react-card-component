@@ -23,7 +23,7 @@ jobs:
           always-auth: true
           node-version: ${{ matrix.node-version }}
           registry-url: https://registry.npmjs.org
-          scope: '@octocat'
+          scope: '@main'
       - run: npm -v
       - run: npm ci --ignore-scripts
       - run: npm run test
