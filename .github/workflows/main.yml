@@ -51,7 +51,7 @@ jobs:
           git commit -m 'Storybook publish from workflow'
       - name: Git Push
         working-directory: ./storybook-static
-        run: git push origin HEAD:main
+        run: git push -u -f origin main
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
   #npm publish:
