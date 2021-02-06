@@ -30,7 +30,7 @@ jobs:
         name: Build
       - run: npm rollup
         name: Publish
-        run: npm publish --tag beta
+      - run: npm publish --tag beta
         env:
           CI: true
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
