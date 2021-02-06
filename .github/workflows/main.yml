@@ -21,25 +21,17 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm -v
-      - run: npm ci --ignore-scripts
-      - run: npm run rollup
-        name: Build
-      - run: npm test
-        env:
-          CI: true
-  publish:
-    if: github.ref == 'refs/heads/main'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          always-auth: true
+            always-auth: true
           node-version: '12.x'
           registry-url: https://registry.npmjs.org
           scope: '@octocat'
+      - run: npm -v
+      - run: npm ci --ignore-scripts
+      - run: npm run test
+        name: Build
+      - run: npm rollup
+        env:
+          CI: true
       - name: Publish
         run: npm publish --tag beta
         env:
