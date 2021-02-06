@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '12.x'
       - run: npm -v
-      - run: npm ci --ignore-scripts
+      - run: npm ci
       - run: npm run test
       - run: npm run rollup
   storybook:
