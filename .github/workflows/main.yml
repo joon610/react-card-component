@@ -51,7 +51,7 @@ jobs:
           git commit -m 'Storybook publish from workflow'
       - name: Git Push
         working-directory: ./storybook-static
-        run: git push --set-upstream origin main
+        run: git push origin HEAD:master
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
