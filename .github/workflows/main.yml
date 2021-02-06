@@ -31,8 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: storybook publish
-      - uses: actions/setup-node@v1
-      - name: story book build
+        uses: actions/setup-node@v1
         with:
           node-version: '12.x'
           repo-token: ${{ secrets.TOKEN }}
