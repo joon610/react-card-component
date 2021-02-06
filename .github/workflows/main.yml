@@ -25,12 +25,11 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run test
       - run: npm run rollup
-  publish:
+  storybook:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: storybook publish
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
