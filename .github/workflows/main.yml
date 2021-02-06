@@ -19,8 +19,9 @@ jobs:
         with:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org/'
-      - run: npm install
-      - run: npm run rollup
-      - run: npm publish
+      - run: npm info react-card-component
+        # - run: npm install
+        # - run: npm run rollup
+        # - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
