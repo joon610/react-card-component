@@ -24,6 +24,7 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run rollup
+      - run: npm run build-storybook
   storybook:
     needs: build
     runs-on: ubuntu-latest
@@ -34,16 +35,14 @@ jobs:
           node-version: '12.x'
           repo-token: ${{ secrets.TOKEN }}
       - name: publish
-        run: npm ci
-      - name: storybook
-        run: npm run build-storybook
-        # cd ./storybook-static
-        # git init
-        # git remote add origin https://github.com/joon610/react-card-storybook
-        # git fetch origin
-        # git add .
-        # git commit -m 'Storybook publish from workflow'
-        # git push --set-upstream origin main
+      - run: |
+        cd ./storybook-static
+        git init
+        git remote add origin https://github.com/joon610/react-card-storybook
+        git fetch origin
+        git add .
+        git commit -m 'Storybook publish from workflow'
+        git push --set-upstream origin main
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
