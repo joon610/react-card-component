@@ -21,7 +21,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: npm -v
       - run: npm ci
       - run: npm run test
       - run: npm run rollup
@@ -35,6 +34,7 @@ jobs:
           node-version: '12.x'
           repo-token: ${{ secrets.TOKEN }}
       - name: publish
+        run: npm ci
         run: npm run build-storybook
         # cd ./storybook-static
         # git init
