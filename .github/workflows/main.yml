@@ -35,6 +35,7 @@ jobs:
           repo-token: ${{ secrets.TOKEN }}
       - name: publish
         run: npm ci
+      - name: storybook
         run: npm run build-storybook
         # cd ./storybook-static
         # git init
