@@ -36,13 +36,14 @@ jobs:
       - run: npm ci
       - name: build Storybook
         run: npm run build-storybook
-      - run: cd ./storybook-static
-      - run: git init
-      - run: git remote add origin https://github.com/joon610/react-card-storybook
-      - run: git fetch origin
-      - run: git add .
-      - run: git commit -m 'Storybook publish from workflow'
-      - run: git push --set-upstream origin main
+      - name: Git Push storybook
+        working-directory: ./storybook-static
+        run: git init
+        run: git remote add origin https://github.com/joon610/react-card-storybook
+        run: git fetch origin
+        run: git add .
+        run: git commit -m 'Storybook publish from workflow'
+        run: git push --set-upstream origin main
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
