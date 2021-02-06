@@ -35,14 +35,14 @@ jobs:
           node-version: '12.x'
           repo-token: ${{ secrets.TOKEN }}
       - name: publish
-      - run: |
-        cd ./storybook-static
-        git init
-        git remote add origin https://github.com/joon610/react-card-storybook
-        git fetch origin
-        git add .
-        git commit -m 'Storybook publish from workflow'
-        git push --set-upstream origin main
+        run: |
+          cd ./storybook-static
+          git init
+          git remote add origin https://github.com/joon610/react-card-storybook
+          git fetch origin
+          git add .
+          git commit -m 'Storybook publish from workflow'
+          git push --set-upstream origin main
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
