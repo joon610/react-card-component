@@ -9,8 +9,12 @@
 ## Install
 
 ```
- npm i react-card-componet
+  npm i react-card-componet
 ```
+
+## Example Page
+
+[React Card Story book!](https://joon610.github.io/react-card-storybook/)
 
 ## Usage (Parameta)
 
@@ -32,15 +36,11 @@
   const NewCard = () =><Card style={{"color":"red"}}><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` elevation
-
-elevation default = 1;
+### `Common Props` background
 
 ```js
-  type elevationType =  0 | 1 | 2
-
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card elevation={1}><div>HelloWorld</div></Card>);
+  const NewCard = () =><Card background={"red"}><div>HelloWorld</div></Card>);
 ```
 
 ### `Common Props` hoverType
@@ -52,10 +52,18 @@ elevation default = 1;
   const NewCard = () =><Card hoverType={"zoom"}><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` radius
+### `Common Props` bordered
 
 ```js
 
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card raidus={"10px"}><div>HelloWorld</div></Card>);
+  const NewCard = () =><Card bordered><div>HelloWorld</div></Card>);
+```
+
+### `Common Props` outlined
+
+```js
+
+  import { Card } from 'react-card-component';
+  const NewCard = () =><Card outlined><div>HelloWorld</div></Card>);
 ```
