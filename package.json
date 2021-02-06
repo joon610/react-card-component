@@ -11,7 +11,7 @@
     "rollup": "rollup -c",
     "build": "jest && rollup -c",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook && cd ./storybook-static && git add . && git commit -m 'update' && git push"
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
