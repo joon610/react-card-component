@@ -38,7 +38,7 @@ jobs:
       - name: github context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
-          run: echo "$GITHUB_CONTEXT"
+        run: echo "$GITHUB_CONTEXT"
       # - name: build Storybook
       #   run: |
       #     npm ci
