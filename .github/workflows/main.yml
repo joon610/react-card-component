@@ -24,18 +24,18 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run rollup
-  storybook:
+  storybook_Publish:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      # - uses: actions/checkout@v1
       - uses: fregante/setup-git-token@v1
         with:
           token: ${{ secrets.TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: npm ci
+      # - run: npm ci
       - name: build Storybook
         run: npm run build-storybook
       - name: Git init
@@ -45,8 +45,6 @@ jobs:
       - name: Git Remote and Commit
         working-directory: ./storybook-static
         run: |
-          git config --global user.name 'joon610'
-          git config --global user.email 'joon610@gmail.com'
           git remote add origin https://github.com/joon610/react-card-storybook
           git checkout -b main
           git add .
@@ -55,8 +53,6 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git push origin main -f
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
   #npm publish:
   #   needs: build
   #   runs-on: ubuntu-latest
