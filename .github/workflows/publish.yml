@@ -44,6 +44,6 @@ jobs:
           git config --global user.email "joon610@gmail.com"
           git init
           git remote add origin https://github.com/joon610/react-card-storybook
-          git checkout -b main
+          git checkout -m main
           git add .
           git push origin main -f
