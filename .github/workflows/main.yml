@@ -31,7 +31,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: fregante/setup-git-token@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -54,8 +54,6 @@ jobs:
       - name: Git Push
         working-directory: ./storybook-static
         run: |
-          git config --global user.name 'joon610'
-          git config --global user.email 'joon610@gmail.com'
           git push origin main -f
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
