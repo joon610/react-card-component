@@ -37,7 +37,7 @@ jobs:
   #       env:
   #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   storybook-publish:
-    needs: npm-publish
+    # needs: npm-publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
