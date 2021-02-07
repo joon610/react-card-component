@@ -40,7 +40,7 @@ jobs:
           npm run build-storybook
       - name: Storybook Publish
         working-directory: ./storybook-static
-      - run: git init
+        run: git init
       - run: git config user.email "joon610@gmail.com"
       - run: git config user.name "'joon610'"
       - run: git commit --amend --reset-author
