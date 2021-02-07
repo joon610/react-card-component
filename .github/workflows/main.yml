@@ -45,6 +45,8 @@ jobs:
       - name: Git Remote and Commit
         working-directory: ./storybook-static
         run: |
+          git config --global user.name 'joon610'
+          git config --global user.email 'joon610@gmail.com'
           git remote add origin https://github.com/joon610/react-card-storybook
           git checkout -b main
           git add .
