@@ -41,7 +41,7 @@ jobs:
         run: |
           git init
           git config --global user.name 'joon610'
-          git config --global user.email 'joon610@users.noreply.github.com'
+          git config --global user.email 'joon610@gmail.com'
       - name: Git Remote and Commit
         working-directory: ./storybook-static
         run: |
