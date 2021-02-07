@@ -4,8 +4,9 @@
 name: React Card Component CI
 
 on:
-  tags:
-    - 0.0.1* # Push events to v1 tag
+  create:
+    tags:
+      - 0.0.1* # Push events to v1 tag
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -46,6 +47,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - run: npm ci
       - name: build Storybook
         run: npm run build-storybook
       - name: Git Connect Storybook repo
