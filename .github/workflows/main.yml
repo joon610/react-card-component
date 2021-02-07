@@ -32,7 +32,6 @@ jobs:
       - uses: fregante/setup-git-token@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
@@ -43,8 +42,6 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git init
-          git config --global user.name 'joon610'
-          git config --global user.email 'joon610@gmail.com'
       - name: Git Remote and Commit
         working-directory: ./storybook-static
         run: |
@@ -54,7 +51,10 @@ jobs:
           git commit -m 'Storybook publish from workflow'
       - name: Git Push
         working-directory: ./storybook-static
-        run: git  push --prune https://token:${GITHUB_TOKEN}@github.com/react-card-storybook.git origin main -f
+        run: |
+          git config --global user.name 'joon610'
+          git config --global user.email 'joon610@gmail.com'
+          git push origin main -f
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
   #npm publish:
