@@ -35,22 +35,22 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - name: github context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
-      # - name: build Storybook
-      #   run: |
-      #     npm ci
-      #     npm run build-storybook
-      # - name: Storybook Publish
-      #   working-directory: ./storybook-static
-      #   run: |
-      #     git config --global user.email "jdj610@gmail.com"
-      #     git config --global user.name "joon610"
-      #     git config --global init.defaultBranch main
-      #     git init
-      #     git remote add origin https://github.com/joon610/react-card-storybook
-      #     git add .
-      #     git commit -m ${{  steps.get_tag_name.outputs.VERSION }}
-      #     git push origin main -f
+      # - name: github context
+      #   env:
+      #     GITHUB_CONTEXT: ${{ toJSON(github) }}
+      #   run: echo "$GITHUB_CONTEXT"
+      - name: build Storybook
+        run: |
+          npm ci
+          npm run build-storybook
+      - name: Storybook Publish
+        working-directory: ./storybook-static
+        run: |
+          git config --global user.email "jdj610@gmail.com"
+          git config --global user.name "joon610"
+          git config --global init.defaultBranch main
+          git init
+          git remote add origin https://github.com/joon610/react-card-storybook
+          git add .
+          git commit -m ${{  github.event.ref }}
+          git push origin main -f
