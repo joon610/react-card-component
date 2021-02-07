@@ -46,12 +46,12 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git remote add origin https://github.com/joon610/react-card-storybook
-          git fetch origin
+          git checkout -b main
           git add .
           git commit -m 'Storybook publish from workflow'
       - name: Git Push
         working-directory: ./storybook-static
-        run: git push -u -f origin main
+        run: git push origin main -f
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
   #npm publish:
