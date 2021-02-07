@@ -46,5 +46,5 @@ jobs:
           git init
           git remote add origin https://github.com/joon610/react-card-storybook
           git add .
-          git commit -m ${{ steps.tagName.outputs.tag }}
+          git commit -m ${{ github.event.head_commit.message }}
           git push origin main -f
