@@ -43,7 +43,7 @@ jobs:
         run: git init
       - run: git config user.email "joon610@gmail.com"
       - run: git config user.name "'joon610'"
-      - run: git commit --amend --reset-author
+      - run: git commit --amend -F --reset-author
       - run: git remote add origin https://github.com/joon610/react-card-storybook
       - run: git checkout -b main
       - run: git add .
