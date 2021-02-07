@@ -49,5 +49,4 @@ jobs:
           git checkout -b main
           git add .
           git commit -m 'Storybook publish from workflow'
-          git commit --amend --author="joon610 <joon610@gmail.com>"
           git push origin main -f
