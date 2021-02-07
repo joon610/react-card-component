@@ -4,10 +4,8 @@
 name: React Card Component CI
 
 on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+  tags:
+    - 0.0.1* # Push events to v1 tag
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -15,17 +13,17 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Build on Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: npm ci
+      - id: npm_ci
+        run: npm ci
       - run: npm run test
       - run: npm run rollup
   npm-publish:
     needs: build
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
@@ -33,29 +31,27 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org/'
       - name: Publish
-        run: npm publish --tag beta
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   storybook-publish:
     needs: npm-publish
-    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: fregante/setup-git-token@v1
         with:
+          name: joon610
+          email: joon610@gmail.com
           token: ${{ secrets.TOKEN }}
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: npm ci
       - name: build Storybook
         run: npm run build-storybook
       - name: Git Connect Storybook repo
         working-directory: ./storybook-static
         run: |
           git init
-          git config --global user.name 'workFlow'
-          git config --global user.email 'joon610@gmail.com'
           git remote add origin https://github.com/joon610/react-card-storybook
           git checkout -b main
           git add .
