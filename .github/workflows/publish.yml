@@ -8,7 +8,7 @@ on:
       - 0.0.1-beta.*
   # push:
   # branches: [workflow]
-  # jobs:
+jobs:
   #   npm-publish:
   #     runs-on: ubuntu-latest
   #     steps:
