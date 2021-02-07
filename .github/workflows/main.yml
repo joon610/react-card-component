@@ -23,8 +23,21 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run rollup
-  storybook-publish:
+  npm-publish:
     needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org/'
+      - name: Publish
+        run: npm publish --tag beta
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  storybook-publish:
+    needs: npm-publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -41,7 +54,7 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git init
-          git config --global user.name 'joon610'
+          git config --global user.name 'workFlow'
           git config --global user.email 'joon610@gmail.com'
           git remote add origin https://github.com/joon610/react-card-storybook
           git checkout -b main
@@ -51,16 +64,3 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git push origin main -f
-  npm-publish:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-          registry-url: 'https://registry.npmjs.org/'
-      - name: Publish
-        run: npm publish --tag beta
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
