@@ -7,24 +7,7 @@ on:
     tags:
       - 0.0.1-beta.*
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build on Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
-      - name: Project Build
-        run: |
-          npm ci
-          npm run test
-          npm run rollup
   npm-publish:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -33,7 +16,10 @@ jobs:
           node-version: '12.x'
           registry-url: 'https://registry.npmjs.org/'
       - name: Publish
-        run: npm publish
+        run: |
+          npm ci
+          npm run build
+          npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   storybook-publish:
