@@ -40,12 +40,11 @@ jobs:
           npm run build-storybook
       - name: Storybook Publish
         working-directory: ./storybook-static
-        run: |
-          git init
-          git config user.email "joon610@gmail.com"
-          git config user.name "'joon610'"
-          git commit --amend --reset-author
-          git remote add origin https://github.com/joon610/react-card-storybook
-          git checkout -b main
-          git add .
-          git push origin main -f
+      - run: git init
+      - run: git config user.email "joon610@gmail.com"
+      - run: git config user.name "'joon610'"
+      - run: git commit --amend --reset-author
+      - run: git remote add origin https://github.com/joon610/react-card-storybook
+      - run: git checkout -b main
+      - run: git add .
+      - run: git push origin main -f
