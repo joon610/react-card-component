@@ -15,7 +15,7 @@ jobs:
       matrix:
         node-version: [12.x]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - name: Build on Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -27,7 +27,7 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - uses: fregante/setup-git-token@v1
         with:
           token: ${{ secrets.TOKEN }}
@@ -41,6 +41,8 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git init
+          git config --global user.name 'joon610'
+          git config --global user.email 'joon610@gmail.com'
           git remote add origin https://github.com/joon610/react-card-storybook
           git checkout -b main
           git add .
