@@ -6,26 +6,26 @@ on:
   create:
     tags:
       - 0.0.1-beta.*
-  # push:
-  #   branches: [workflow]
+  push:
+    branches: [workflow]
 jobs:
-  # npm-publish:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v2
-  #     - uses: actions/setup-node@v1
-  #       with:
-  #         node-version: '12.x'
-  #         registry-url: 'https://registry.npmjs.org/'
-  #     - name: Publish
-  #       run: |
-  #         npm ci
-  #         npm run build
-  #         npm publish
-  #       env:
-  #         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org/'
+      - name: Publish
+        run: |
+          npm ci
+          npm run build
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   storybook-publish:
-    # needs: npm-publish
+    needs: npm-publish
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -35,10 +35,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      # - name: github context
-      #   env:
-      #     GITHUB_CONTEXT: ${{ toJSON(github) }}
-      #   run: echo "$GITHUB_CONTEXT"
       - name: build Storybook
         run: |
           npm ci
@@ -54,3 +50,7 @@ jobs:
           git add .
           git commit -m ${{  github.event.ref }}
           git push origin main -f
+      # - name: github context
+      #   env:
+      #     GITHUB_CONTEXT: ${{ toJSON(github) }}
+      #   run: echo "$GITHUB_CONTEXT"
