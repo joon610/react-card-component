@@ -3,11 +3,11 @@
 name: React Card Component CI
 
 on:
-  # create:
-  #   tags:
-  #     - 0.0.1-beta.*
-  push:
-    branches: [workflow]
+  create:
+    tags:
+      - 0.0.1-beta.*
+  # push:
+  #   branches: [workflow]
 jobs:
   # npm-publish:
   #   runs-on: ubuntu-latest
