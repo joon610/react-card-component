@@ -23,7 +23,7 @@ jobs:
       - run: npm ci
       - run: npm run test
       - run: npm run rollup
-  storybook_Publish:
+  storybook-publish:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -49,7 +49,7 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git push origin main -f
-  npm publish:
+  npm-publish:
     needs: build
     runs-on: ubuntu-latest
     steps:
