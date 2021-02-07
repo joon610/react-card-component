@@ -3,10 +3,9 @@
 name: React Card Component CI
 
 on:
-  push:
-    branches: [workflow]
-  # pull_request:
-  # branches: [workflow]
+  create:
+    tags:
+      - 0.0.1-beta.*
 jobs:
   # npm-publish:
   #   runs-on: ubuntu-latest
@@ -47,5 +46,5 @@ jobs:
           git init
           git remote add origin https://github.com/joon610/react-card-storybook
           git add .
-          git commit -m ${{ github.event.head_commit.message }}
+          git commit -m ${{ steps.tagName.outputs.tag }}
           git push origin main -f
