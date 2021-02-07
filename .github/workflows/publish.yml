@@ -42,8 +42,8 @@ jobs:
         working-directory: ./storybook-static
         run: |
           git init
-          git config --global user.email "joon610@gmail.com"
-          git config --global user.name "'joon610'"
+          git config user.email "joon610@gmail.com"
+          git config user.name "'joon610'"
           git remote add origin https://github.com/joon610/react-card-storybook
           git checkout -b main
           git add .
