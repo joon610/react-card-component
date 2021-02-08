@@ -30,7 +30,7 @@ export const HoverTypeZoom= Template.bind({});
 HoverTypeZoom.args = {
   bordered: true,
   outlined: true,
-  hoverType: "zoom",
+  hoverType: "zoom"
 };
 
 export const HoverTypeUp= Template.bind({});

@@ -18,54 +18,50 @@
 
 [React Card Story book!](https://joon610.github.io/react-card-storybook/)
 
-## Usage (Parameta)
-
-<!-- - [`style`](#style)
-- [`elevation`](#elevation)
-- [`hoverType`](#hoverType) -->
-
-### `Component` Card
+### `Component`
 
 ```js
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card><div>HelloWorld</div></Card>);
+  const NewCard = () => <Card><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` style
+### `Common Props`
+
+## style
 
 ```js
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card style={{"color":"red"}}><div>HelloWorld</div></Card>);
+  const NewCard = () => <Card style={{"color":"red"}}><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` background
+## background
 
 ```js
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card background={"red"}><div>HelloWorld</div></Card>);
+  const NewCard = () => <Card background={"red"}><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` hoverType
+## hoverType
 
 ```js
   type hoverMoveType = 'up' | 'left' | `right` | `down` | 'zoom'
 
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card hoverType={"zoom"}><div>HelloWorld</div></Card>);
+  const NewCard = () => <Card hoverType={"zoom"}><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` bordered
+## bordered
 
 ```js
 
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card bordered><div>HelloWorld</div></Card>);
+  const NewCard = () => <Card bordered><div>HelloWorld</div></Card>);
 ```
 
-### `Common Props` outlined
+## outlined
 
 ```js
 
   import { Card } from 'react-card-component';
-  const NewCard = () =><Card outlined><div>HelloWorld</div></Card>);
+  const NewCard = () => <Card outlined><div>HelloWorld</div></Card>);
 ```

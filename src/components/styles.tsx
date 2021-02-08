@@ -23,7 +23,7 @@ export const css_pointer = (hasFlg:boolean|undefined) => hasFlg && css`cursor:po
 
 export const css_background = (color:string|undefined) => css`background:${color||`#f5f5f5`};`
 
-export const css_user_style = (style:object|undefined) => (css`${objectToCssStyle(style)}`);
+export const css_user_style = (style:object|undefined) => css`${objectToCssStyle(style)}`
 
 export const css_hover_option =(type:string|undefined)=> {
   switch (type) {
@@ -54,6 +54,7 @@ const css_hover_up = css`
 `
 const css_hover_down = css`
   ${css_transition}
+
   :hover{
     border-color: #1EA7FD50;
     box-shadow: rgba(0, 0, 0, 0.06) 0 3px 10px 0;
@@ -78,6 +79,9 @@ const css_hover_right = css`
 `
 const css_hover_zoom = css`
   ${css_transition}
+  /* ::before{
+    transform: scale(1.0);
+  } */
   :hover{
     z-index:10;
     border-color: #1EA7FD50;
