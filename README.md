@@ -11,7 +11,7 @@
 ## Install
 
 ```
-  npm i react-card-componet
+  npm i react-card-component
 ```
 
 ## Example Page
