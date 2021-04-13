@@ -42,7 +42,7 @@ export const css_hover_option =(type:string|undefined)=> {
   }
 }
 
-const css_transition = css`transition: background 150ms ease-out, border 150ms ease-out, transform 150ms ease-out;`
+const css_transition = css`transition: background 150ms ease-out, transform 150ms ease-out;`
 
 const css_hover_up = css`
   ${css_transition}
@@ -79,9 +79,6 @@ const css_hover_right = css`
 `
 const css_hover_zoom = css`
   ${css_transition}
-  /* ::before{
-    transform: scale(1.0);
-  } */
   :hover{
     z-index:10;
     border-color: #1EA7FD50;
