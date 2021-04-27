@@ -13,7 +13,7 @@ export interface BasicCardProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-export const Card:React.FC<BasicCardProps> = ({children,background, outlined=false, bordered=false, style={}, hoverType, ...props}) => {
+export const Card:React.FC<BasicCardProps> = ({children,background, outlined=true, bordered=false, style={}, hoverType, ...props}) => {
 
   const css_combine = [
     css_root,

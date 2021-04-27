@@ -7,7 +7,7 @@ export default {
   component: Card,
   args:{
     bordered: false,
-    outlined: false,
+    outlined: true,
     style:{width:"300px",height:"200px"},
     onClick: undefined
   }

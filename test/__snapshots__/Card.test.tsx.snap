@@ -6,6 +6,7 @@ exports[`<Card> Background 1`] = `
   height: 100%;
   background: white;
   color: dimgray;
+  border: 1px solid #00000010;
   background: red;
 }
 
@@ -37,6 +38,7 @@ exports[`<Card> bordered  1`] = `
   height: 100%;
   background: white;
   color: dimgray;
+  border: 1px solid #00000010;
   border-radius: 10px;
   background: #f5f5f5;
 }
@@ -65,6 +67,7 @@ exports[`<Card> css Object style 1`] = `
   height: 100%;
   background: white;
   color: dimgray;
+  border: 1px solid #00000010;
   background: #f5f5f5;
   width: 300px;
   background: red;
@@ -98,6 +101,7 @@ exports[`<Card> empty snapshot 1`] = `
   height: 100%;
   background: white;
   color: dimgray;
+  border: 1px solid #00000010;
   background: #f5f5f5;
 }
 
