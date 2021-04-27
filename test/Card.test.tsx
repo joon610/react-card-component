@@ -4,6 +4,8 @@ import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
 import {Card} from '../src/components/Card'
 import { objectToCssStyle } from '../src/components/utils';
+import { relative } from 'path';
+import { inherits } from 'util';
 expect.extend(matchers)
 
 describe('<Card>',()=>{
@@ -93,6 +95,22 @@ describe('<Card>',()=>{
     const { container } =render(<Card hoverType={"right"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyleRule("transform", "translate3d(4px, 0, 0)", { target: ":hover" });
+  })
+
+  it('Glass', async ()=>{
+    const { container } =render(<Card glass><div>good</div></Card>);
+    const firstChild = container.getElementsByTagName('div')[0];
+    expect(firstChild).toHaveStyle({'position':'relative', 'z-index':'1',  'overflow':'hidden'});
+    expect(firstChild).toHaveStyleRule("content", '""', { target: ":before" });
+    expect(firstChild).toHaveStyleRule("position", "absolute", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("z-index", "-1", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("top", "0", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("left", "0", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("right", "0", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("bottom", "0", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("box-shadow", "inset 0 0 2000px rgba(255, 255, 255, .5)", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("margin", "-20px", { target: ":before" });
+    expect(firstChild).toHaveStyleRule("filter", "blur(10px)", { target: ":before" });
   })
 })
 

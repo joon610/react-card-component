@@ -67,3 +67,9 @@ OnClick.args = {
   hoverType: "zoom",
   onClick:(e)=>{console.log(e)}
 };
+
+
+export const Glass= Template.bind({});
+Glass.args = {
+  glass: true,
+};

@@ -42,6 +42,30 @@ export const css_hover_option =(type:string|undefined)=> {
   }
 }
 
+export const css_glass_option =  (hasFlg:boolean|undefined) => hasFlg && css_glass;
+
+const css_glass = css`
+	position: relative;
+	z-index: 1;
+	background: inherit;
+	overflow: hidden;
+  &:before {
+    content: "";
+    position: absolute;
+    background: inherit;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+    margin: -20px;
+  }
+
+`
+
+
 const css_transition = css`transition: background 150ms ease-out, transform 150ms ease-out;`
 
 const css_hover_up = css`
@@ -86,3 +110,4 @@ const css_hover_zoom = css`
     transform: scale(1.1);
   }
 `
+
