@@ -13,7 +13,10 @@ export default {
   }
 } as Meta;
 
-const Template: Story<BasicCardProps> = (args) =>(<Card {...args} />);
+const Template: Story<BasicCardProps> = (args) =>{
+  document.body.style.background = " url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat"
+  return (<Card {...args} />)
+};
 
 
 export const Bordered = Template.bind({});
