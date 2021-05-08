@@ -14,6 +14,7 @@ export default {
 } as Meta;
 
 const Template: Story<BasicCardProps> = (args) =>{
+  document.body.style.background = ""
   return (<Card {...args} />)
 };
 const GlassTemplate: Story<BasicCardProps> = (args) =>{
