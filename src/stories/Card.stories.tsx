@@ -14,6 +14,9 @@ export default {
 } as Meta;
 
 const Template: Story<BasicCardProps> = (args) =>{
+  return (<Card {...args} />)
+};
+const GlassTemplate: Story<BasicCardProps> = (args) =>{
   document.body.style.background = " url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat"
   return (<Card {...args} />)
 };
@@ -72,7 +75,7 @@ OnClick.args = {
 };
 
 
-export const Glass= Template.bind({});
+export const Glass= GlassTemplate.bind({});
 Glass.args = {
   glass: true,
 };

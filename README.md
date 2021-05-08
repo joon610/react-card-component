@@ -27,6 +27,13 @@
 
 ### `Common Props`
 
+## glass
+
+```js
+  import { Card } from 'react-card-component';
+  const NewCard = () => <Card glass><div>HelloWorld</div></Card>);
+```
+
 ## style
 
 ```js
