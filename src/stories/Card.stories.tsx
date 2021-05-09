@@ -1,4 +1,5 @@
 import React from 'react';
+import { css } from '@emotion/react'
 import { Story, Meta } from '@storybook/react/types-6-0';
 import {Card,BasicCardProps}  from '../components/Card';
 
@@ -18,8 +19,11 @@ const Template: Story<BasicCardProps> = (args) =>{
   return (<Card {...args} />)
 };
 const GlassTemplate: Story<BasicCardProps> = (args) =>{
-  document.body.style.background = " url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat"
-  return (<Card {...args} />)
+  return (
+    <div style={{padding:"200px", background: " url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat"}}>
+      <Card {...args} />
+    </div>
+    )
 };
 
 
@@ -79,4 +83,10 @@ OnClick.args = {
 export const Glass= GlassTemplate.bind({});
 Glass.args = {
   glass: true,
+};
+
+export const GlassOption= GlassTemplate.bind({});
+GlassOption.args = {
+  glass: true,
+  glassOption: {blur:5,transparency: 0.1}
 };

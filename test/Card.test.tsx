@@ -4,8 +4,6 @@ import { matchers } from '@emotion/jest'
 import '@testing-library/jest-dom'
 import {Card} from '../src/components/Card'
 import { objectToCssStyle } from '../src/components/utils';
-import { relative } from 'path';
-import { inherits } from 'util';
 expect.extend(matchers)
 
 describe('<Card>',()=>{
@@ -98,7 +96,12 @@ describe('<Card>',()=>{
   })
 
   it('Glass', async ()=>{
-    const { container } =render(<Card glass><div>good</div></Card>);
+    const { container } = render(<Card glass><div>good</div></Card>);
+    expect(container).toMatchSnapshot();
+  })
+
+  it('GlassOption', async ()=>{
+    const { container } = render(<Card glass glassOption={{blur:10,transparency:0.2}}><div>good</div></Card>);
     expect(container).toMatchSnapshot();
   })
 })

@@ -1,4 +1,5 @@
 import { css } from '@emotion/react'
+import { glassType } from './Card'
 import {objectToCssStyle} from './utils'
 
 export const css_root = css`
@@ -42,17 +43,12 @@ export const css_hover_option =(type:string|undefined)=> {
   }
 }
 
-export const css_glass_option =  (hasFlg:boolean|undefined) => hasFlg && css_glass;
-
-const css_glass = css`
-  background: rgba( 255, 255, 255, 0.25 );
-  box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-  backdrop-filter: blur( 5.0px );
-  -webkit-backdrop-filter: blur( 5.0px );
-  border-radius: 10px;
+export const css_glass_option =  (glass: boolean, glassType:glassType ) => glass && css`
+  background: ${`rgba( 255, 255, 255, ${glassType.transparency})`};
+  backdrop-filter: ${`blur( ${glassType.blur }px )`};
+  -webkit-backdrop-filter: ${`blur( ${glassType.blur}px )`};
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 `
-
 
 const css_transition = css`transition: background 150ms ease-out, transform 150ms ease-out;`
 
