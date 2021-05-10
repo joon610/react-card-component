@@ -64,43 +64,43 @@ describe('<Card>',()=>{
     expect(container).toMatchSnapshot();
   })
 
-  it('hover zoom', async ()=>{
+  it('hover zoom', ()=>{
     const { container } =render(<Card hoverType={"zoom"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyleRule("z-index", "10", { target: ":hover" });
     expect(firstChild).toHaveStyleRule("transform", "scale(1.1)", { target: ":hover" });
   })
 
-  it('hover up', async ()=>{
+  it('hover up', ()=>{
     const { container } =render(<Card hoverType={"up"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyleRule("transform", "translate3d(0, -4px, 0)", { target: ":hover" });
   })
 
-  it('hover down', async ()=>{
+  it('hover down', ()=>{
     const { container } =render(<Card hoverType={"down"}/>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyleRule("transform", "translate3d(0, 4px, 0)", { target: ":hover" });
   })
 
-  it('hover left', async ()=>{
+  it('hover left', ()=>{
     const { container } =render(<Card hoverType={"left"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyleRule("transform", "translate3d(-4px, 0, 0)", { target: ":hover" });
   })
 
-  it('hover right', async ()=>{
+  it('hover right',  ()=>{
     const { container } =render(<Card hoverType={"right"}><div>good</div></Card>);
     const firstChild = container.getElementsByTagName('div')[0];
     expect(firstChild).toHaveStyleRule("transform", "translate3d(4px, 0, 0)", { target: ":hover" });
   })
 
-  it('Glass', async ()=>{
-    const { container } = render(<Card glass><div>good</div></Card>);
+  it('glass', ()=>{
+    const { container } =render(<Card glass><div>good</div></Card>);
     expect(container).toMatchSnapshot();
   })
 
-  it('GlassOption', async ()=>{
+  it('glassOption', async ()=>{
     const { container } = render(<Card glass glassOption={{blur:10,transparency:0.2}}><div>good</div></Card>);
     expect(container).toMatchSnapshot();
   })

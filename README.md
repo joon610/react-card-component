@@ -27,11 +27,15 @@
 
 ### `Common Props`
 
-## glass
+## glass, glassOption
 
 ```js
   import { Card } from 'react-card-component';
+
+  // default blur:4, transparency:0.2
   const NewCard = () => <Card glass><div>HelloWorld</div></Card>);
+
+  const NewCard = () => <Card glass glassOption={{blur:5,transparency: 0.1}}><div>HelloWorld</div></Card>);
 ```
 
 ## style
