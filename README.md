@@ -1,8 +1,12 @@
-# react-card-component
+<p align="center"><img src="https://raw.githubusercontent.com/joon610/react-card-component/main/logo.svg"></p>
 
-![React Card Component CI](https://github.com/joon610/react-card-component/workflows/React%20Card%20Component%20CI/badge.svg)
-[![works badge](https://cdn.jsdelivr.net/gh/nikku/works-on-my-machine@v0.2.0/badge.svg)](https://github.com/joon610/react-card-component)
-[![GitHub license](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://github.com/joon610/react-card-component/blob/main/LICENSE)
+<p align="center">
+  <a href="https://github.com/joon610/react-card-component"><img src="https://github.com/joon610/react-card-component/workflows/React%20Card%20Component%20CI/badge.svg" alt="Build Status"></a>
+  <a href="https://github.com/joon610/react-card-component"><img src="https://cdn.jsdelivr.net/gh/nikku/works-on-my-machine@v0.2.0/badge.svg" alt="myPc"></a>
+  <a href="https://github.com/joon610/react-card-component"><img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="license"></a>
+</p>
+
+<h1 align="center">react-card-component</h1>
 
 ## License
 
@@ -18,16 +22,9 @@
 
 [React Card Story book!](https://joon610.github.io/react-card-storybook/)
 
-### `Component`
+## `Props`
 
-```js
-  import { Card } from 'react-card-component';
-  const NewCard = () => <Card><div>HelloWorld</div></Card>);
-```
-
-### `Common Props`
-
-## glass, glassOption
+### glass, glassOption
 
 ```js
   import { Card } from 'react-card-component';
@@ -38,21 +35,21 @@
   const NewCard = () => <Card glass glassOption={{blur:5,transparency: 0.1}}><div>HelloWorld</div></Card>);
 ```
 
-## style
+### style
 
 ```js
   import { Card } from 'react-card-component';
   const NewCard = () => <Card style={{"color":"red"}}><div>HelloWorld</div></Card>);
 ```
 
-## background
+### background
 
 ```js
   import { Card } from 'react-card-component';
   const NewCard = () => <Card background={"red"}><div>HelloWorld</div></Card>);
 ```
 
-## hoverType
+### hoverType
 
 ```js
   type hoverMoveType = 'up' | 'left' | `right` | `down` | 'zoom'
@@ -61,7 +58,7 @@
   const NewCard = () => <Card hoverType={"zoom"}><div>HelloWorld</div></Card>);
 ```
 
-## bordered
+### bordered
 
 ```js
 
@@ -69,7 +66,7 @@
   const NewCard = () => <Card bordered><div>HelloWorld</div></Card>);
 ```
 
-## outlined
+### outlined
 
 ```js
 
