@@ -18,9 +18,9 @@
   npm i react-card-component
 ```
 
-## Example Page
+## Demo & Examples
 
-[React Card Story book!](https://joon610.github.io/react-card-storybook/)
+[Demo](https://joon610.github.io/react-card-storybook/)
 
 ## `Props`
 

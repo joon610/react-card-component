@@ -44,9 +44,9 @@ export const css_hover_option =(type:string|undefined)=> {
 }
 
 export const css_glass_option =  (glass: boolean, glassType:glassType ) => glass && css`
-  background: ${`rgba( 255, 255, 255, ${glassType.transparency})`};
-  backdrop-filter: ${`blur( ${glassType.blur }px )`};
-  -webkit-backdrop-filter: ${`blur( ${glassType.blur}px )`};
+  background: ${`rgba( 255, 255, 255, ${glassType?.transparency|| 0.2})`};
+  backdrop-filter: ${`blur( ${glassType?.blur || 4 }px )`};
+  -webkit-backdrop-filter: ${`blur( ${glassType?.blur || 4}px )`};
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 `
 
