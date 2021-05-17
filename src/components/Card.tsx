@@ -6,7 +6,7 @@ import {css_root,css_child, css_user_style ,css_hover_option, css_pointer, css_b
 
 export interface glassType  {
   blur?: 0|1|2|3|4|5|6|7|8|9|10|11|12|13|14|15|16|17|18|19|20;
-  transparency: 0|0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|1;
+  transparency?: 0|0.1|0.2|0.3|0.4|0.5|0.6|0.7|0.8|0.9|1;
 }
 export interface BasicCardProps {
   children?: JSX.Element;
@@ -23,7 +23,7 @@ export interface BasicCardProps {
 
 
 
-export const Card:React.FC<BasicCardProps> = ({children,background, outlined=true, bordered=false, style={}, hoverType, glass=false, glassOption={blur:4,transparency:0.2}, ...props}) => {
+export const Card:React.FC<BasicCardProps> = ({children,background, outlined=true, bordered=false, style={}, hoverType, glass=false, glassOption={}, ...props}) => {
 
   const css_combine = [
     css_root,

@@ -20,7 +20,7 @@ const Template: Story<BasicCardProps> = (args) =>{
 };
 const GlassTemplate: Story<BasicCardProps> = (args) =>{
   return (
-    <div style={{padding:"200px", background: " url(https://images.unsplash.com/photo-1544306094-e2dcf9479da3) no-repeat"}}>
+    <div style={{padding:"200px", background: " url(https://raw.githubusercontent.com/joon610/react-card-component/main/img/bg.png"}}>
       <Card {...args} />
     </div>
     )
@@ -83,10 +83,12 @@ OnClick.args = {
 export const Glass= GlassTemplate.bind({});
 Glass.args = {
   glass: true,
+  bordered: true,
 };
 
 export const GlassOption= GlassTemplate.bind({});
 GlassOption.args = {
   glass: true,
+  bordered: true,
   glassOption: {blur:5,transparency: 0.1}
 };
