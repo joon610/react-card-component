@@ -38,14 +38,14 @@
 ### style
 
 ```js
-  import { Card } from 'react-card-component';
+  import Card from 'react-card-component';
   const NewCard = () => <Card style={{"color":"red"}}><div>HelloWorld</div></Card>);
 ```
 
 ### background
 
 ```js
-  import { Card } from 'react-card-component';
+  import Card from 'react-card-component';
   const NewCard = () => <Card background={"red"}><div>HelloWorld</div></Card>);
 ```
 
@@ -54,7 +54,7 @@
 ```js
   type hoverMoveType = 'up' | 'left' | `right` | `down` | 'zoom'
 
-  import { Card } from 'react-card-component';
+  import Card from 'react-card-component';
   const NewCard = () => <Card hoverType={"zoom"}><div>HelloWorld</div></Card>);
 ```
 
@@ -62,7 +62,7 @@
 
 ```js
 
-  import { Card } from 'react-card-component';
+  import Card from 'react-card-component';
   const NewCard = () => <Card bordered><div>HelloWorld</div></Card>);
 ```
 
@@ -70,6 +70,6 @@
 
 ```js
 
-  import { Card } from 'react-card-component';
+  import Card from 'react-card-component';
   const NewCard = () => <Card outlined><div>HelloWorld</div></Card>);
 ```
