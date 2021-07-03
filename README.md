@@ -8,6 +8,8 @@
 
 <h1 align="center">react-card-component</h1>
 
+## Don't Use It It's not finished
+
 ## License
 
 - MIT License
