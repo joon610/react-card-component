@@ -1,8 +1,9 @@
 {
   "name": "react-card-component",
-  "version": "0.0.1-beta.5.9.0",
+  "version": "0.0.1-beta.5.9.1",
   "description": "React Card Component",
   "main": "./lib/index.js",
+  "type": "module",
   "files": [
     "lib"
   ],
